@@ -1,55 +1,31 @@
--- Skrypt czyszczący dane ze wszystkich tabel bazy danych i resetujący automatyczne id nadawane wpisom
+DELETE FROM zwroty;
+ALTER SEQUENCE zwroty_id_zwrotu_seq RESTART;
 
--- Wyczyść dane z tabeli `kategorie`
-DELETE FROM kategorie;
-
--- Zresetuj sekwencję generującą ID dla tabeli `kategorie`
-ALTER SEQUENCE seq_kategorie_id RESTART;
-
--- Wyczyść dane z tabeli `producenci`
-DELETE FROM producenci;
-
--- Zresetuj sekwencję generującą ID dla tabeli `producenci`
-ALTER SEQUENCE seq_producenci_id RESTART;
-
--- Wyczyść dane z tabeli `rozmiary`
-DELETE FROM rozmiary;
-
--- Zresetuj sekwencję generującą ID dla tabeli `rozmiary`
-ALTER SEQUENCE seq_rozmiary_id RESTART;
-
--- Wyczyść dane z tabeli `adresy`
-DELETE FROM adresy;
-
--- Zresetuj sekwencję generującą ID dla tabeli `adresy`
-ALTER SEQUENCE seq_adresy_id RESTART;
-
--- Wyczyść dane z tabeli `uzytkownicy`
-DELETE FROM uzytkownicy;
-
--- Zresetuj sekwencję generującą ID dla tabeli `uzytkownicy`
-ALTER SEQUENCE seq_uzytkownicy_id RESTART;
-
--- Wyczyść dane z tabeli `klienci`
-DELETE FROM klienci;
-
--- Zresetuj sekwencję generującą ID dla tabeli `klienci`
-ALTER SEQUENCE seq_klienci_id RESTART;
-
--- Wyczyść dane z tabeli `zamowienia`
-DELETE FROM zamowienia;
-
--- Zresetuj sekwencję generującą ID dla tabeli `zamowienia`
-ALTER SEQUENCE seq_zamowienia_id RESTART;
-
--- Wyczyść dane z tabeli `zamowienia_produkty`
 DELETE FROM zamowienia_produkty;
 
--- Zresetuj sekwencję generującą ID dla tabeli `zamowienia_produkty`
-ALTER SEQUENCE seq_zamowienia_produkty_id RESTART;
+DELETE FROM zamowienia;
+ALTER SEQUENCE zamowienia_id_zamowienia_seq RESTART;
 
--- Wyczyść dane z tabeli `zwroty`
-DELETE FROM zwroty;
+DELETE FROM produkty;
+ALTER SEQUENCE produkty_id_produkt_seq RESTART;
 
--- Zresetuj sekwencję generującą ID dla tabeli `zwroty`
-ALTER SEQUENCE seq_zwroty_id RESTART;
+DELETE FROM kategorie;
+ALTER SEQUENCE kategorie_id_kategoria_seq RESTART;
+
+DELETE FROM producenci;
+ALTER SEQUENCE producenci_id_producent_seq RESTART;
+
+DELETE FROM rozmiary;
+ALTER SEQUENCE rozmiary_id_rozmiar_seq RESTART;
+
+
+DELETE FROM osoby_adresy;
+
+DELETE FROM adresy;
+ALTER SEQUENCE adresy_id_adres_seq RESTART;
+
+DELETE FROM uzytkownicy;
+ALTER SEQUENCE uzytkownicy_id_osoba_seq RESTART;
+
+DELETE FROM klienci;
+ALTER SEQUENCE klienci_id_klient_seq RESTART;
