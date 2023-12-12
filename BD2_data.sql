@@ -54,14 +54,14 @@ VALUES
 
 INSERT INTO produkty (id_producent, id_kategoria, id_rozmiar, nazwa_produktu, opis, cena_netto_sprzedazy, procent_vat_sprzedazy)
 VALUES
-    (7, 1, 7, 'Torebka damska', 'Elegancka torebka damska renomowanej marki Tommy Hilfiger. Wykonana z wysokiej jakości skóry.', 250.00, 23.00),
-    (8, 1, 8, 'Spodnie jeansowe', 'Markowe spodnie jeansowe renomowanej marki Calvin Klein. Wykonane z trwałego i wygodnej tkaniny.', 125.00, 23.00),
-    (1, 2, 1, 'Rzepy', 'Markowe buty sportowe renomowanej marki Nike. Idealne na co dzień i do uprawiania sportu.', 150.00, 23.00),
-    (2, 2, 2, 'Skarpety zimowe', 'Komfortowe skarpety zimowe renomowanej marki Adidas. Wykonane z ciepłego i przyjemnego dla skóry materiału.', 35.00, 23.00),
-    (3, 3, 3, 'Męska bluza', 'Gładka bluza męska renomowanej marki New Balance. Wykonana z miękkiego i przyjemnego dla skóry materiału.', 120.00, 23.00),
-    (4, 4, 4, 'Czapka z daszkiem', 'Czapa z daszkiem renomowanej marki Converse. Idealna na rower, rolki lub inne sportowe aktywności.', 50.00, 23.00),
-    (5, 5, 5, 'Plecak szkolny', 'Plecak szkolny renomowanej marki Puma. Wyposażony w wiele praktycznych kieszeni i przegród.', 80.00, 23.00),
-    (6, 6, 6, 'Ręcznik plażowy', 'Ręcznik plażowy renomowanej marki Vans. Wykonany z miękkiej i szybkoschnącej tkaniny.', 45.00, 23.00);
+    (7, 1, 1, 'Torebka damska', 'Elegancka torebka damska renomowanej marki Tommy Hilfiger. Wykonana z wysokiej jakości skóry.', 250.00, 23.00),
+    (8, 1, 2, 'Spodnie jeansowe', 'Markowe spodnie jeansowe renomowanej marki Calvin Klein. Wykonane z trwałego i wygodnej tkaniny.', 125.00, 23.00),
+    (1, 2, 3, 'Rzepy', 'Markowe buty sportowe renomowanej marki Nike. Idealne na co dzień i do uprawiania sportu.', 150.00, 23.00),
+    (2, 2, 4, 'Skarpety zimowe', 'Komfortowe skarpety zimowe renomowanej marki Adidas. Wykonane z ciepłego i przyjemnego dla skóry materiału.', 35.00, 23.00),
+    (3, 3, 1, 'Męska bluza', 'Gładka bluza męska renomowanej marki New Balance. Wykonana z miękkiego i przyjemnego dla skóry materiału.', 120.00, 23.00),
+    (4, 4, 2, 'Czapka z daszkiem', 'Czapa z daszkiem renomowanej marki Converse. Idealna na rower, rolki lub inne sportowe aktywności.', 50.00, 23.00),
+    (5, 5, 3, 'Plecak szkolny', 'Plecak szkolny renomowanej marki Puma. Wyposażony w wiele praktycznych kieszeni i przegród.', 80.00, 23.00),
+    (6, 6, 4, 'Ręcznik plażowy', 'Ręcznik plażowy renomowanej marki Vans. Wykonany z miękkiej i szybkoschnącej tkaniny.', 45.00, 23.00);
 
 INSERT INTO osoby_adresy (id_osoba, id_adres)
 VALUES
