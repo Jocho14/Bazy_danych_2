@@ -1,4 +1,4 @@
---dodaje osobe, pozniej do wykorzystania w dowaniau klienta i pracownika
+--dodaje osobe, pozniej do wykorzystania w dowaniau klienta i pracownika. nie dziala dodawanie emaila, nie ma dodawania nr tel
 
 CREATE OR REPLACE FUNCTION dodaj_osobe(login text, pass text, im text, naz text, nrtel int, em text)
 RETURNS integer  
