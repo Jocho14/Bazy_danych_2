@@ -1,4 +1,4 @@
-CREATE VIEW historia_zamowien AS
+CREATE OR REPLACE VIEW historia_zamowien AS
 SELECT
     zamowienia.id_zamowienia,
     zamowienia.id_klienta,
@@ -10,3 +10,4 @@ JOIN
     zamowienia_produkty ON zamowienia.id_zamowienia = zamowienia_produkty.id_zamowienia
 JOIN
     produkty ON zamowienia_produkty.id_produktu = produkty.id_produktu;
+

@@ -62,7 +62,7 @@ CREATE TABLE uzytkownicy (
   Nazwisko VARCHAR(50)
 );
 
-CREATE TABLE osoby_adresy (
+CREATE TABLE uzytkownicy_adresy (
   id_osoba INTEGER NOT NULL,
   id_adres INTEGER NOT NULL,
   PRIMARY KEY (id_osoba, id_adres)
@@ -83,13 +83,13 @@ CREATE TABLE numery_telefonu (
   numer_telefonu INTEGER NOT NULL UNIQUE
 );
 
-CREATE TABLE numery_telefonu_osoby (
+CREATE TABLE uzytkownicy_numery_telefonu (
   id_osoba INTEGER NOT NULL,
   id_telefon INTEGER NOT NULL,
   PRIMARY KEY (id_osoba, id_telefon)
 );
 
-CREATE TABLE adresy_email_osoby (
+CREATE TABLE uzytkownicy_adresy_email (
   id_osoba INTEGER NOT NULL,
   id_email INTEGER NOT NULL,
   PRIMARY KEY (id_osoba, id_email)
@@ -120,17 +120,17 @@ ALTER TABLE klienci ADD CONSTRAINT FKKlienci734610 FOREIGN KEY (id_osoba) REFERE
 
 ALTER TABLE pracownicy ADD CONSTRAINT FKPracownicy613837 FOREIGN KEY (id_osoba) REFERENCES uzytkownicy (id_osoba);
 
-ALTER TABLE osoby_adresy ADD CONSTRAINT FKOsoby_Adre117052 FOREIGN KEY (id_osoba) REFERENCES uzytkownicy (id_osoba);
+ALTER TABLE uzytkownicy_adresy ADD CONSTRAINT FKOsoby_Adre117052 FOREIGN KEY (id_osoba) REFERENCES uzytkownicy (id_osoba);
 
-ALTER TABLE osoby_adresy ADD CONSTRAINT FKOsoby_Adre207878 FOREIGN KEY (id_adres) REFERENCES adresy (id_adres);
+ALTER TABLE uzytkownicy_adresy ADD CONSTRAINT FKOsoby_Adre207878 FOREIGN KEY (id_adres) REFERENCES adresy (id_adres);
 
-ALTER TABLE numery_telefonu_osoby ADD CONSTRAINT "FKNumery tel83454" FOREIGN KEY (id_telefon) REFERENCES numery_telefonu (id_telefon);
+ALTER TABLE uzytkownicy_numery_telefonu ADD CONSTRAINT "FKNumery tel83454" FOREIGN KEY (id_telefon) REFERENCES numery_telefonu (id_telefon);
 
-ALTER TABLE numery_telefonu_osoby ADD CONSTRAINT "FKNumery tel222680" FOREIGN KEY (id_osoba) REFERENCES uzytkownicy (id_osoba);
+ALTER TABLE uzytkownicy_numery_telefonu ADD CONSTRAINT "FKNumery tel222680" FOREIGN KEY (id_osoba) REFERENCES uzytkownicy (id_osoba);
 
-ALTER TABLE adresy_email_osoby ADD CONSTRAINT "FKAdresy ema219072" FOREIGN KEY (id_email) REFERENCES adresy_email (id_email);
+ALTER TABLE uzytkownicy_adresy_email ADD CONSTRAINT "FKAdresy ema219072" FOREIGN KEY (id_email) REFERENCES adresy_email (id_email);
 
-ALTER TABLE adresy_email_osoby ADD CONSTRAINT "FKAdresy ema416738" FOREIGN KEY (id_osoba) REFERENCES uzytkownicy (id_osoba);
+ALTER TABLE uzytkownicy_adresy_email ADD CONSTRAINT "FKAdresy ema416738" FOREIGN KEY (id_osoba) REFERENCES uzytkownicy (id_osoba);
 
 ALTER TABLE zamowienia ADD CONSTRAINT FKZamowienia604264 FOREIGN KEY (id_klienta) REFERENCES klienci (id_klient);
 
@@ -148,4 +148,4 @@ ALTER TABLE produkty ADD CONSTRAINT FKProdukty909807 FOREIGN KEY (id_kategoria) 
 
 ALTER TABLE produkty ADD CONSTRAINT FKProdukty16635 FOREIGN KEY (id_producent) REFERENCES producenci (id_producent);
 
-ALTER TABLE produkty ADD CONSTRAINT FKProdukty440814 FOREIGN KEY (id_rozmiar) REFERENCES rozmiary (id_rozmiar));
+ALTER TABLE produkty ADD CONSTRAINT FKProdukty440814 FOREIGN KEY (id_rozmiar) REFERENCES rozmiary (id_rozmiar);
