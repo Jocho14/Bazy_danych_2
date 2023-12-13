@@ -1,0 +1,30 @@
+CREATE OR REPLACE FUNCTION dodaj_osobe(login text, pass text, im text, naz text, nrtel int, em text)
+RETURNS integer  
+LANGUAGE plpgsql
+AS
+$$
+	DECLARE 
+		os_id int;
+		e_id int;
+	
+	BEGIN
+		INSERT INTO uzytkownicy(login, haslo, imie, nazwisko)
+		VALUES
+			(login, pass, im, naz)
+		RETURNING id_osoba 
+		INTO os_id;
+		
+		INSERT INTO adresy_email(email)
+		VALUES
+			(em)
+		RETURNING id_email
+		INTO e_id;
+		
+		RAISE INFO 'Wsadzono';
+		
+		INSERT INTO uzytkownicy_adresy_email(id_osoba, id_email)
+		VALUES (os_id, e_id);
+		
+		RETURN os_id;
+	END;
+$$ 

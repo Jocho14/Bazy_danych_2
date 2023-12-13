@@ -1,0 +1,9 @@
+struktra bazy danych
+	uprawnienia
+	przykładowe dan [partially]
+	poprawic nazwy [done]
+	przykładowe błędne dane <- do sprawozdania
+	indeksy
+	procedury skladowe
+	
+	sprawozdanie ze strony przykładowa dokumentacja
