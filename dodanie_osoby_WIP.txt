@@ -1,3 +1,5 @@
+--dodaje osobe, pozniej do wykorzystania w dowaniau klienta i pracownika
+
 CREATE OR REPLACE FUNCTION dodaj_osobe(login text, pass text, im text, naz text, nrtel int, em text)
 RETURNS integer  
 LANGUAGE plpgsql
