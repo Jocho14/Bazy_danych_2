@@ -1,11 +1,11 @@
-INSERT INTO kategorie (nazwa_kategorii)
+INSERT INTO kategorie (kategoria)
 VALUES
     ('bielizna'),
     ('bluzki'),
 	('spodnie'),
     ('nakrycia głowy');
 
-INSERT INTO producenci (nazwa)
+INSERT INTO producenci (producent)
 VALUES
     ('Cotton World'),
     ('Cropp'),
@@ -19,7 +19,7 @@ VALUES
     ('XL'),
     ('XXL');
 
-INSERT INTO produkty (id_producent, id_kategoria, id_rozmiar, nazwa_produktu, opis, cena_netto_sprzedazy, procent_vat_sprzedazy)
+INSERT INTO produkty (id_producent, id_kategoria, id_rozmiar, nazwa, opis, cena_netto_sprzedazy, procent_vat_sprzedazy)
 VALUES
     (1, 1, 2, 'Bielizna męska', 'Wytrzymała bielizna męska w przystepnej cenie. Wykonane z bawełny.', 15.00, 23.00),
     (2, 2, 2, 'Koszulka męska zabawna rybacka', 'Wspaniałej jakości koszulka męska z napisem "Fish fear me, women want me!". Doskonały prezent na dzień chłopaka. Wykonana z mieszanki bawełny i poliestru.', 50.00, 23.00),

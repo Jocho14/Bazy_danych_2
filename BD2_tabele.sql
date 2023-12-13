@@ -25,15 +25,15 @@ CREATE TABLE adresy (
 
 CREATE TABLE kategorie (
   id_kategoria SERIAL PRIMARY KEY,
-  nazwa_kategorii VARCHAR(45) NOT NULL UNIQUE
+  kategoria VARCHAR(45) NOT NULL UNIQUE
 );
 
 CREATE TABLE produkty (
-  id_produkt SERIAL PRIMARY KEY,
+  id_produktu SERIAL PRIMARY KEY,
   id_producent INTEGER NOT NULL,
   id_kategoria INTEGER NOT NULL,
   id_rozmiar INTEGER NOT NULL,
-  nazwa_produktu VARCHAR(45),
+  nazwa VARCHAR(45),
   opis VARCHAR(200),
   cena_netto_sprzedazy DECIMAL(10, 2),
   procent_vat_sprzedazy DECIMAL(10, 2)
@@ -70,7 +70,7 @@ CREATE TABLE uzytkownicy_adresy (
 
 CREATE TABLE producenci (
   id_producent SERIAL PRIMARY KEY,
-  nazwa VARCHAR(20) NOT NULL UNIQUE
+  producent VARCHAR(20) NOT NULL UNIQUE
 );
 
 CREATE TABLE adresy_email (
@@ -97,10 +97,10 @@ CREATE TABLE uzytkownicy_adresy_email (
 
 CREATE TABLE zamowienia_produkty (
   id_zamowienia INTEGER NOT NULL,
-  id_produkt INTEGER NOT NULL,
+  id_produktu INTEGER NOT NULL,
   ilosc INTEGER NOT NULL,
   cena_produktu DECIMAL(10, 2) NOT NULL,
-  PRIMARY KEY (id_zamowienia, id_produkt)
+  PRIMARY KEY (id_zamowienia, id_produktu)
 );
 
 CREATE TABLE zwroty_produkty (
@@ -136,11 +136,11 @@ ALTER TABLE zamowienia ADD CONSTRAINT FKZamowienia604264 FOREIGN KEY (id_klienta
 
 ALTER TABLE zamowienia_produkty ADD CONSTRAINT FKZamowienia899522 FOREIGN KEY (id_zamowienia) REFERENCES zamowienia (id_zamowienia);
 
-ALTER TABLE zamowienia_produkty ADD CONSTRAINT FKZamowienia303091 FOREIGN KEY (id_produkt) REFERENCES produkty (id_produkt);
+ALTER TABLE zamowienia_produkty ADD CONSTRAINT FKZamowienia303091 FOREIGN KEY (id_produktu) REFERENCES produkty (id_produktu);
 
 ALTER TABLE zwroty_produkty ADD CONSTRAINT FKZwrot_Prod755279 FOREIGN KEY (id_zwrotu) REFERENCES zwroty (id_zwrotu);
 
-ALTER TABLE zwroty_produkty ADD CONSTRAINT FKZwrot_Prod905821 FOREIGN KEY (id_produktu) REFERENCES produkty (id_produkt);
+ALTER TABLE zwroty_produkty ADD CONSTRAINT FKZwrot_Prod905821 FOREIGN KEY (id_produktu) REFERENCES produkty (id_produktu);
 
 ALTER TABLE zwroty ADD CONSTRAINT FKZwrot600624 FOREIGN KEY (id_powiazanego_zamowienia) REFERENCES zamowienia (id_zamowienia);
 
