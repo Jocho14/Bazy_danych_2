@@ -3,7 +3,17 @@ AFTER UPDATE
 ON pracownicy
 FOR EACH ROW
 BEGIN
-	IF NEW.konto_aktywne <> OLD.konto_aktywne AND NEW.konto_aktywne IS FALSE THEN
-		SET NEW.data_zwolnienia = CURRENT_DATE;
+	IF NEW.data_zwolnienia IS NOT NULL THEN
+		SET NEW.konto_aktywne = FALSE;
     END IF;
+END;
+
+CREATE TRIGGER kupno_produktow
+AFTER INSERT
+ON zamowienia_produkty
+FOR EACH ROW
+BEGIN
+	UPDATE produkty 
+	SET 
+
 END;
