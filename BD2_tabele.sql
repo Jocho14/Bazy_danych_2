@@ -55,7 +55,7 @@ CREATE TABLE klienci (
 
 CREATE TABLE zamowienia (
   id_zamowienia SERIAL PRIMARY KEY,
-  id_klientaa INTEGER NOT NULL,
+  id_klienta INTEGER NOT NULL,
   data_zlozenia_zamowienia DATE NOT NULL,
   data_przyjecia_zamowienia DATE,
   data_wysylki DATE,
@@ -127,7 +127,7 @@ ALTER TABLE uzytkownicy_adresy_email ADD CONSTRAINT FKuzy_email219072 FOREIGN KE
 
 ALTER TABLE uzytkownicy_adresy_email ADD CONSTRAINT FKuzy_email416738 FOREIGN KEY (id_uzytkownika) REFERENCES uzytkownicy (id_uzytkownika);
 
-ALTER TABLE zamowienia ADD CONSTRAINT FKzamowienia604264 FOREIGN KEY (id_klientaa) REFERENCES klienci (id_klienta);
+ALTER TABLE zamowienia ADD CONSTRAINT FKzamowienia604264 FOREIGN KEY (id_klienta) REFERENCES klienci (id_klienta);
 
 ALTER TABLE zamowienia_produkty ADD CONSTRAINT FKzam_prod899522 FOREIGN KEY (id_zamowienia) REFERENCES zamowienia (id_zamowienia);
 

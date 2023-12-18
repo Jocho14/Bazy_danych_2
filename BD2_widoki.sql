@@ -21,7 +21,7 @@ SELECT
 FROM
   produkty
   LEFT OUTER JOIN producenci ON produkty.id_producenta = producenci.id_producenta
-  LEFT OUTER JOIN rozmiary ON produkty.id_rozmiu = rozmiary.id_rozmiu
+  LEFT OUTER JOIN rozmiary ON produkty.id_rozmiaru = rozmiary.id_rozmiaru
   LEFT OUTER JOIN kategorie ON produkty.id_kategorii = kategorie.id_kategorii;
 
 CREATE OR REPLACE VIEW kontakt_do_klienta AS
