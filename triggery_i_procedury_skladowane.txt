@@ -1,0 +1,8 @@
+Triggery:
+* Licz¹cy ³¹czn¹ kwotê zamówienia – automatycznie sumuje ceny produktów dodane do zamówienia
+* aktualizuj¹cy status konta pracownika – automatycznie zmienia status konta pracownika na nieaktywne, kiedy data zwolnienia jest wprowadzana.
+* aktualizuj¹cy stan magazynowy po zrealizowaniu zamówienia – zmniejsza iloœæ produktów w magazynie po zrealizowaniu zamówienia.
+Procedury sk³adowane:
+* do dodawania uzytkownikow: klienta i pracownika
+* do tworzenia nowego zamówienia - przyjmuje dane klienta i szczegó³y zamówienia, a nastêpnie tworzy nowe rekordy w odpowiednich tabelach
+* do aktualizacji danych kontaktowych klienta - umo¿liwia aktualizacjê adresu email, numeru telefonu i adresu dla istniej¹cego klienta
