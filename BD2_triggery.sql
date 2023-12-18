@@ -30,6 +30,27 @@ BEGIN
 	WHERE produkty.id_produktu = OLD.id_produktu;
 END;
 
+CREATE TRIGGER tri_zwrot_produktow
+AFTER INSERT
+ON zwroty_produkty
+FOR EACH ROW
+BEGIN
+	UPDATE produkty 
+	SET produkty.ilosc_w_magazynie = produkty.ilosc_w_magazynie + NEW.ilosc
+	WHERE produkty.id_produktu = NEW.id_produktu;
+END;
+
+CREATE TRIGGER tri_cofniecie_zwrot_produktow
+AFTER DELETE
+ON zwroty_produkty
+FOR EACH ROW
+BEGIN
+	UPDATE produkty 
+	SET produkty.ilosc_w_magazynie = produkty.ilosc_w_magazynie - OLD.ilosc
+	WHERE produkty.id_produktu = OLD.id_produktu;
+END;
+
+
 CREATE OR REPLACE FUNCTION wylicz_cene_zamowienia() RETURNS TRIGGER AS $$
 DECLARE
   total_amount DECIMAL(10, 2);
