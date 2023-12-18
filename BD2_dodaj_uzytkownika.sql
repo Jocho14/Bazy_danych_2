@@ -1,6 +1,5 @@
 CREATE
 OR REPLACE FUNCTION dodaj_uzytkownika(
-  --100% nie działa
   arg_login VARCHAR(64),
   arg_haslo VARCHAR(64),
   arg_imie VARCHAR(20),
@@ -21,7 +20,7 @@ var_id_email INTEGER;
 
 var_id_telefonu INTEGER;
 
-BEGIN -- Dodaj użytkownika do tabeli uzytkownicy
+BEGIN 
 INSERT INTO
   uzytkownicy (
     login,
@@ -35,15 +34,7 @@ VALUES
     arg_haslo,
     arg_imie,
     arg_nazwisko
-  );
-
--- Pobierz identyfikator użytkownika
-SELECT
-  id_uzytkownika
-FROM
-  uzytkownicy
-WHERE
-  uzytkownicy.login = arg_login INTO var_id_uzytkownika;
+  ) RETURNING uzytkownicy.id_uzytkownika INTO var_id_uzytkownika;
 
 SELECT
   id_adresu
