@@ -1,6 +1,6 @@
 struktra bazy danych
 	uprawnienia
-	przykładowe dan [partially]
+	przykładowe dan 
 	poprawic nazwy [done]
 	przykładowe błędne dane <- do sprawozdania
 	indeksy
