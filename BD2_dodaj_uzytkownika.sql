@@ -11,7 +11,7 @@ OR REPLACE FUNCTION dodaj_uzytkownika(
   arg_adres_nr_domu VARCHAR(10),
   arg_adres_nr_lokalu VARCHAR(10),
   arg_adres_kod_pocztowy VARCHAR(6)
-) RETURNS VOID AS $$ DECLARE 
+) RETURNS INTEGER AS $$ DECLARE 
 var_id_uzytkownika INTEGER;
 
 var_id_adresu INTEGER;
@@ -113,6 +113,7 @@ VALUES
     var_id_telefonu
   );
 
+RETURN var_id_uzytkownika;
 END;
 
 $$ LANGUAGE plpgsql;
