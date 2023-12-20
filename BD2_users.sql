@@ -1,10 +1,13 @@
 CREATE USER guest;
 
-GRANT SELECT ON TABLE produkty, rozmiary, producenci, kategorie, detale_produktow TO guest;
-
 CREATE USER client LOGIN PASSWORD 'access';
 
-GRANT SELECT ON DATABASE sklep TO client;
+CREATE USER admin SUPERUSER LOGIN PASSWORD 'admin';
+
+
+GRANT SELECT ON TABLE produkty, rozmiary, producenci, kategorie, detale_produktow TO guest;
+
+GRANT SELECT ON ALL TABLES IN SCHEMA "public" TO client;
 
 GRANT EXECUTE ON FUNCTION dodaj_uzytkownika(
   arg_login VARCHAR(64),
@@ -18,8 +21,8 @@ GRANT EXECUTE ON FUNCTION dodaj_uzytkownika(
   arg_adres_nr_domu VARCHAR(10),
   arg_adres_nr_lokalu VARCHAR(10),
   arg_adres_kod_pocztowy VARCHAR(6)
-) TO client;
+) TO client, guest;
 
-GRANT INSERT ON TABLE klienci, zamowienia, zamowienia_produkty TO client;
+GRANT INSERT ON TABLE klienci TO guest, client;
 
-CREATE USER admin SUPERUSER LOGIN PASSWORD 'admin';
+GRANT INSERT ON TABLE zamowienia, zamowienia_produkty TO client;
