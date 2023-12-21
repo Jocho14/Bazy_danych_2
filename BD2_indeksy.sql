@@ -2,10 +2,10 @@ CREATE INDEX idx_uzytkownicy_imie
 ON uzytkownicy(imie, nazwisko);
 
 CREATE INDEX idx_adresy_miejscowosc 
-ON adresy (miejscowosc);
+ON adresy(miejscowosc);
 
 CREATE INDEX idx_zamowienia_data_zlozenia 
-ON zamowienia (data_zlozenia_zamowienia);
+ON zamowienia(data_zlozenia_zamowienia);
 
 CREATE INDEX idx_produkty_nazwa
 ON produkty(nazwa);
