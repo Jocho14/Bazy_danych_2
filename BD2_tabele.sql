@@ -94,7 +94,7 @@ CREATE TABLE produkty (
   ilosc_w_magazynie INTEGER NOT NULL CONSTRAINT ilosc_poz CHECK (ilosc_w_magazynie > 0),
   cena_netto_sprzedazy DECIMAL(10, 2) CONSTRAINT cena_poz CHECK (cena_netto_sprzedazy > 0),
   procent_vat_sprzedazy DECIMAL(10, 2) CONSTRAINT vat_poz CHECK (procent_vat_sprzedazy > 0),
-  obrazek VARCHAR(100)
+  obrazek VARCHAR(200)
 );
 CREATE TABLE kategorie (
   id_kategorii SERIAL PRIMARY KEY,
