@@ -83,7 +83,8 @@ IF NOT found THEN
   INSERT INTO
     adresy_email (email)
   VALUES
-    (arg_email);
+    ( arg_email
+    ) RETURNING adresy_email.id_email INTO var_id_email;
 END IF;
 
 INSERT INTO
@@ -102,7 +103,7 @@ IF NOT found THEN
 INSERT INTO
   numery_telefonu (numer_telefonu)
 VALUES
-  (arg_numer_telefonu);
+  (arg_numer_telefonu) RETURNING numery_telefonu.id_telefonu INTO var_id_telefonu;
 END IF;
 
 INSERT INTO
